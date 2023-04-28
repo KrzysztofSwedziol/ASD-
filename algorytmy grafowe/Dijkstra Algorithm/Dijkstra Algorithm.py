@@ -21,7 +21,7 @@ def Dijkstra(G, s):
     while PriorQ.qsize() > 0:
         curr = PriorQ.get()
         node = curr[1]
-        for neighbour in (graph[node]):
+        for neighbour in (G[node]):
             node_to_neigh = neighbour[1]
             neighbour_num = neighbour[0]
             relax(G, s, node, neighbour_num, distance,parents,  node_to_neigh, PriorQ)
