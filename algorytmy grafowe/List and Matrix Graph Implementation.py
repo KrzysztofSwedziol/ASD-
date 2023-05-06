@@ -30,11 +30,20 @@ parents = {"A": [], "B": [], "C": [], "D": [], "E": []}
 print(graph1)
 
 #--------------------------------------------Class Graph----------------------------------------------------------------
+# A-----5------C\
+# |           |  6
+# |           |    \
+# 8           2     E
+# |           |    /
+# |           |  9
+# B-----3------D/
+
 class Node:
     def __init__(self, Name):
         self.visited = False
         self.parent = None
         self.name = Name
+
 
 
 
@@ -46,13 +55,14 @@ class Graph:
         for node in self.nodes :
             self.graph[node] = []
 
-    def add_edge(self, u, v):
-        self.graph[u].append(v.name)
-        self.graph[v].append(u.name)
+    def add_edge(self, u, v, edge_weight):
+        self.graph[u].append((v, edge_weight))
+        self.graph[v].append((u, edge_weight))
 
     def print_graph(self):
         for node in self.nodes:
-            print(node.name, "--->", self.graph[node])
+            for v in self.graph[node]:
+                print(node.name, "--->", v[0].name, " weight : ", v[1])
 
 A = Node("A")
 B = Node("B")
@@ -63,15 +73,14 @@ E = Node("E")
 
 Nodes = [A, B, C, D, E]
 G = Graph(Nodes)
-G.add_edge(A, B)
-G.add_edge(A, C)
-G.add_edge(B, D)
-G.add_edge(C, D)
-G.add_edge(C, E)
-G.add_edge(D, E)
+G.add_edge(A, B, 8)
+G.add_edge(A, C, 5)
+G.add_edge(B, D, 3)
+G.add_edge(C, D, 2)
+G.add_edge(C, E, 6)
+G.add_edge(D, E, 9)
 
 G.print_graph()
-
 #--------------------------------------------List Graph-----------------------------------------------------------------
 
 graph = {"A": ["B", "C"],
