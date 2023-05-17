@@ -28,7 +28,7 @@ def Ford_Fulkerson(g, source, sink):
         while v != source:
             u = parent[v]
             graph[u][v] -= path_flow
-            #graph[v][u] += path_flow optional if residual net is needed 
+            graph[v][u] += path_flow 
             v = parent[v]
     return Max_Flow
 
