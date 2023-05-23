@@ -72,21 +72,22 @@ def union(set1, set2):
 
 
 def Kruskal(graph):
-    cost = inf
-    sorted_edges = sorted(graph.graph, key = lambda x : x[2])
-    for i in range (len(sorted_edges) -1, -1, -1):
-        sorted_edges[i] = union(sorted_edges[i][0], sorted_edges[i][1])
-    while len(sorted_edges) > 1:
-        b = union(sorted_edges[0], sorted_edges[1])
-        if b == sorted_edges[0]:
-            sorted_edges.pop(1)
-        else :
-            sorted_edges.pop(0)
+    n = len(graph.graph)
+    edges = graph.graph
+    MST = []
+    edges.sort(key = lambda x : x[2])
 
-    return sorted_edges[0]
-
+    for u, v, c in edges:
+        x = findset(u)
+        y = findset(v)
+        if y != x:
+            MST.append((u.name, v.name, c))
+            union(x, y)
+            if len(MST) == n - 1:
+                break
+    return MST
 
 a = Kruskal(G)
-print(a.name)
+print(a)
 
 
