@@ -10,7 +10,7 @@ def Merge_Sort(tab):
 
         i=j=k=0
         while i<len(L) and j<len(P):
-            if L[i]<P[j]:
+            if L[i]<=P[j]:
                 tab[k]=L[i]
                 i+=1
                 k+=1
