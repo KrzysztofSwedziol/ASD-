@@ -77,6 +77,7 @@ class BST:
             succ_key = successor.key
             self.remove_element(succ_key)
             curr.key = succ_key
+            curr.data = successor.data
             return True
 
 
