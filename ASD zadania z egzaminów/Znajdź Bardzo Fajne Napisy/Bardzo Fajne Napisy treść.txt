@@ -1,0 +1,22 @@
+(ktoś kto zabrał egzamin zrobił bardzo słabe zdjęcie)
+
+pierwszy próg złożoności : O(dnlogn) gdzie n to ilość sekwencji zaś d to długość pojedynczej sekwencji 
+drugi próg złożoności : O(D) gdzie D to łączna długość wszystkich sekwencji 
+
+Dana jest lista L parami różnych napisów składających się z symboli 0, 1. Mówimy że pewien napis w jest fajny
+jeśli jest prefixem co najmniej dwóch napisów z L (przy czym jeśli w L znajduje się napis identyczny 
+do w to napis w wciąż traktujemy jako jego prefix). Dalej mówimy że napis w jest bardzo fajny jeśli jest fajny 
+a ponadto żadne jego rozszerzenie (powstałe poprzez dopisanie dowolnego symbolu na jego końcu) nie jest
+napisem fajnym.
+Zaproponuj, uzasadnij poprawność i zaimplementuj algorytm, który otrzymuje listę napisów L (składających
+się z zer i jedynek) i zwraca wszystkie bardzo fajne napisy dla tej listy. Algorytm powinien być zaimplementowany
+jako funkcja postaci : 
+
+def double_prefix(L)
+
+gdzie L to lista zawierająca napisy (jako napisy w języku Python). Funkcja powinna zwrócić listę prefixów
+spełniających warunki zadania (również jako listę napisów w języku Python).
+Prefixy można zwrócić w dowolnej kolejności.
+
+przykład : 
+Dla wejścia L = ['0100', '0110', '1010', '1'] prawidłowym wynikiem jest dowolna permutacja listy : ['01', '1']
