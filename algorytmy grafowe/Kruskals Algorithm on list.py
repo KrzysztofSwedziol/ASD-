@@ -34,7 +34,8 @@ def Kruskal(G):
     MST = []
     for i in range(n):
         for v, c in G[i]:
-            edges.append((i, v, c))
+            if i < v:
+                edges.append((i, v, c))
     edges.sort(key = lambda x: x[2])
     for i in range(len(edges)):
         if len(MST) >= n-1:
