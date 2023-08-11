@@ -11,8 +11,7 @@
 #A--->0, B--->1, C--->2, D--->3, E--->4
 
 graph = [[1,2], [0, 3], [0, 3, 4], [1, 2, 4], [2, 3]]
-visited = [False for i in range(5)]
-parents = [None for j in range(5)]
+
 
 for x in range(5):
     print(x, '--->', graph[x])
@@ -33,10 +32,10 @@ def explore(graph, node, visited, parents):
             explore(graph, neighbour, visited, parents)
     time +=1   #wierzchołek został przetworzony i time to czas przetworzenia
 
-def DFS(graph, visited, parents):
-    for v in range(len(graph)):
-        visited[v] = False
-        parents[v] = None
+def DFS(graph):
+    n = len(graph)
+    visited = [False for i in range(n)]
+    parents = [None for i in range(n)]
     global time
     time = 0
     for v in range(len(graph)):
@@ -44,4 +43,4 @@ def DFS(graph, visited, parents):
             explore(graph, v, visited, parents)
 
 
-DFS(graph, visited, parents)
+DFS(graph)
