@@ -1,0 +1,5 @@
+Mamy pręt długości Rode_len i tablicę costs zysku za daną długość. Np
+costs = [(3, 3), (7, 12), (5, 8)...] oznacza że za pręt dł. 3 możemy dostać
+3 zł, za dł. 7 - 12, za dł. 5 - 8 itd.
+Zadanie polega na wyznaczeniu maksymalnego zysku jaki otrzymamy z odpowiedniego
+pocięcia pręta 
